@@ -1,0 +1,17 @@
+sudo: false
+cache:
+  directories:
+  - "$HOME/.m2"
+language: java
+jdk:
+- oraclejdk8
+deploy:
+  provider: cloudfoundry
+  api: https://api.cloud.igx.io
+  username: spring
+  password:
+    secure: paas6yxd7sekw1qv+QuamGwLXyrdreXOc3kbX5YyM62Wc7kEZmadlHXargcZiTus3e3LvxWBhzX7fciJ2HFMvRISyV4hws16J72FIEOaSKjsj/fCQP8m94Rg8w/uVvTgCCHhGIAN24D3HkTrRyPYMceBLnpszcu5hIJBC/vAKtuKltsLm2laleleuWBJ1ANsAxo2WxpLWfaVurAzTDwb81AZYhMC4xnxbCO6X1E+HfLLeB5Ls3c0VXT4MYZutCxcnaYkbJiymr1fLPvBNv9RJ/AtnnJK4EJKX1Ll8ptn5Wj4Ac8/DY5qC0Z791BHeWzTBtv+EA6bLsNML0akgI8TZ3UJvs8hw/UnEkUxb3p9hL5/PDCphJHV1ug4q26WT3OpQMpUcv6Qoq1CFwhYP0yNi7QDjjLrN6uztPO3cYRcyM5i+RqJA6aJD8A5ve3UzbqGe3j/eZJLhz86X+yjdVXDbraZZKXiyIVtRBnYfEjUhHNBZE21WIgVGEa4DGmqyGipWKpmtqLcS9mqUZN/P0flBXKXOleuK/GOjuRW10fv91I+Km3lN4fKqxwxsxYPPvap79tUm0opPUwULU2JxmI4c9sHSSYIP2s9GjxgNMr8kcRCYHUXHx6SJ9nj2oPqIJ+cdiBust/Ti5ywSAoyxDKx0OfnmCq2GELX1zZ79TQEJp4=
+  organization: EY
+  space: demo
+  on:
+    repo: viniciusccarvalho/quotes-service
