@@ -58,18 +58,18 @@ public class QuotesService {
 		return quote;
 	}
 
-	@RequestMapping(value="/top")
-	public List<Quote> topQuotes(@RequestParam(name = "size", defaultValue = "10") int size){
-		ResponseEntity<String> response = client.getForEntity(yahooEndpoint,String.class, SP100);
-		Scanner scanner = new Scanner(response.getBody());
-		List<Quote> quotes = new ArrayList<>();
-		while(scanner.hasNextLine()){
-			Quote quote = new Quote(scanner.nextLine());
-			quotes.add(quote);
-		}
-		quotes.sort((q1,q2) -> q2.getDifference().compareTo(q1.getDifference()));
-		return quotes.subList(0,size);
-	}
+//	@RequestMapping(value="/top")
+//	public List<Quote> topQuotes(@RequestParam(name = "size", defaultValue = "10") int size){
+//		ResponseEntity<String> response = client.getForEntity(yahooEndpoint,String.class, SP100);
+//		Scanner scanner = new Scanner(response.getBody());
+//		List<Quote> quotes = new ArrayList<>();
+//		while(scanner.hasNextLine()){
+//			Quote quote = new Quote(scanner.nextLine());
+//			quotes.add(quote);
+//		}
+//		quotes.sort((q1,q2) -> q2.getDifference().compareTo(q1.getDifference()));
+//		return quotes.subList(0,size);
+//	}
 
 	@RequestMapping(value = "/quotes/config")
 	public String config(){
