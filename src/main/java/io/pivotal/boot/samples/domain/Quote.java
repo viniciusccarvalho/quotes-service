@@ -1,6 +1,7 @@
 package io.pivotal.boot.samples.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -20,6 +21,26 @@ public class Quote {
 	private Double daysLow;
 	@JsonProperty("DaysHigh")
 	private Double daysHigh;
+	@JsonProperty("Open")
+	private Double open;
+	@JsonProperty("PreviousClose")
+	private Double previousClose;
+
+	public Double getOpen() {
+		return open;
+	}
+
+	public void setOpen(Double open) {
+		this.open = open;
+	}
+
+	public Double getPreviousClose() {
+		return previousClose;
+	}
+
+	public void setPreviousClose(Double previousClose) {
+		this.previousClose = previousClose;
+	}
 
 	public String getSymbol() {
 		return symbol;
@@ -69,6 +90,11 @@ public class Quote {
 		this.daysHigh = daysHigh;
 	}
 
+	@JsonIgnore
+	public Double getDifference(){
+		return ask - previousClose;
+	}
+
 	public Quote(){}
 
 	public Quote(String csv){
@@ -79,7 +105,8 @@ public class Quote {
 		this.change = parseDouble(contents[3]);
 		this.daysHigh = parseDouble(contents[4]);
 		this.daysLow = parseDouble(contents[5]);
-
+		this.open = parseDouble(contents[6]);
+		this.previousClose = parseDouble(contents[7]);
 	}
 
 	@Override

@@ -5,6 +5,8 @@ cache:
 language: java
 jdk:
 - oraclejdk8
+env:
+ - TRAVIS_BRANCH: master
 deploy:
   edge: true      
   provider: cloudfoundry

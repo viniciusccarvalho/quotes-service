@@ -3,8 +3,9 @@ quotes:
     size: 10
 server:
   port: 9100
+
 yahoo:
-  endpoint: http://download.finance.yahoo.com/d/quotes.csv?s={symbol}&f=snac1gh
+  endpoint: http://download.finance.yahoo.com/d/quotes.csv?s={symbol}&f=snac1ghop
 eureka:
   instance:
     hostname: ${vcap.application.uris[0]}
