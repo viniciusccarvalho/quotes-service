@@ -6,6 +6,7 @@ language: java
 jdk:
 - oraclejdk8
 deploy:
+  edge: true      
   provider: cloudfoundry
   api: https://api.cloud.igx.io
   username: spring
