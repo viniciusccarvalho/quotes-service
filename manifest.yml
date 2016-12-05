@@ -1,0 +1,8 @@
+---
+applications:
+
+- name: quotes-service
+  host: quotes-service
+  instances: 1
+  memory: 1G
+  path: target/quotes-service-0.0.1-SNAPSHOT.jar
