@@ -1,0 +1,9 @@
+---
+applications:
+
+- name: quotes-service-west
+  host: quotes-service-west-${random-word}
+  buildpack: java_buildpack_offline
+  instances: 1
+  memory: 1G
+  path: target/quotes-service-0.0.1-SNAPSHOT.jar

@@ -1,0 +1,14 @@
+quotes:
+  fetch:
+    size: 10
+server:
+  port: 9100
+yahoo:
+  endpoint: http://download.finance.yahoo.com/d/quotes.csv?s={symbol}&f=snac1gh
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    non-secure-port: 80
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
